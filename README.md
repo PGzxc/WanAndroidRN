@@ -29,3 +29,10 @@ yarn
 yarn android
 ```
 
+## 三 准备
+
+* React Native Elements：UI 组件库
+* NativeBase：UI 组件库
+* gluestackui：UI 组件库
+* React Navigation：导航
+* Expo：开源跨平台工具
