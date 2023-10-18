@@ -1,0 +1,1 @@
+@"%~dp0\..\@react-native\metro-config\node_modules\metro-inspector-proxy\src\cli.js"   %*

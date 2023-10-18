@@ -1,0 +1,39 @@
+{
+  "name": "@legendapp/tools",
+  "description": "@legendapp/tools",
+  "sideEffects": false,
+  "private": false,
+  "version": "2.0.1",
+  "license": "MIT",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "**"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./react": "./react.js"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "author": "Legend <contact@legendapp.com> (https://github.com/LegendApp)",
+  "keywords": [
+    "react",
+    "react-native",
+    "hooks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LegendApp/legend-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LegendApp/legend-tools/issues"
+  },
+  "homepage": "https://www.legendapp.com/dev/tools"
+}
