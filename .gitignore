@@ -33,6 +33,7 @@ local.properties
 .cxx/
 *.keystore
 !debug.keystore
+/android/.gradle/
 
 # node.js
 #
@@ -40,6 +41,8 @@ node_modules/
 /node_modules/
 npm-debug.log
 yarn-error.log
+node_modules/@react-native/gradle-plugin/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+node_modules/@react-native/gradle-plugin/.gradle/8.0.1/executionHistory/executionHistory.lock
 
 # fastlane
 #
@@ -70,4 +73,7 @@ yarn-error.log
 .expo
 dist/
 web-build/
+
+
+
 
