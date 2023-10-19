@@ -45,6 +45,7 @@ yarn android
 * 项目创建
 * .eslintrc.js配置rules规则
 * 项目框架搭建(底部导航框架+切换)
+* 使用了[React Navigation](https://reactnavigation.org/)导航库
 
 ### 4.2 V2.0
 
