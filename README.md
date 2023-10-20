@@ -50,7 +50,7 @@ yarn
 
 说明：
 
-* 已安装Expo Go
+* 已安装[Expo Go](https://expo.dev/client)
 * 在Expo Go中启动项目，不生成android和ios目录
 
 * 执行`npx expo start`启动项目(可能出现Network response timed out现象)
