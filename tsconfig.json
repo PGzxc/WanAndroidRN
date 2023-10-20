@@ -1,11 +1,4 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json",
-  "compilerOptions": {
-    "lib": [
-      "dom"
-    ],
-    "includes": [
-      "./externals.d.ts"
-    ]
-  }
+  "compilerOptions": {},
+  "extends": "expo/tsconfig.base"
 }

@@ -1,14 +1,10 @@
 import React from 'react';
 import {NavigationContainer} from "@react-navigation/native";
 import Home from "../pages/home/Home";
-// @ts-ignore
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-// @ts-ignore
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Project from '../pages/project/Project';
 import Msg from '../pages/msg/Msg';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Tabs} from '@gluestack-ui/themed';
 import Navi from '../pages/navi/Navi';
 import Mine from '../pages/mine/Mine';
 
