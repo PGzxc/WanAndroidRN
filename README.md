@@ -55,7 +55,7 @@ yarn
 
 * 执行`npx expo start`启动项目(可能出现Network response timed out现象)
 
-### 3.4 生成android或ios文件夹目录
+### 3.4 生成android或ios文件夹目录(apk文件安装)
 
 * 生成android文件夹：npx expo run:android
 * 生成ios文件夹：npx expo run:ios
