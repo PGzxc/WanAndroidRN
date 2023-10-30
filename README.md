@@ -79,6 +79,17 @@ yarn
 
 ### 5.2 V2.0
 
+* 使用 Fetch进行网络请求，返回一个Promise，简化异步操作
+* 使用async/await对Promise进行优化，catch捕获异常
+* [官网—访问网络](https://reactnative.cn/docs/network)
+* SafeAreaView上添加style，并设置flex:1，否则无法正常显示
+* 使用@ant-design/react-native蚂蚁金服RN组件，需要导入@react-native-camera-roll/camera-roll、@react-native-community/segmented-control、@react-native-community/slider、@react-native-picker/picker等
+* 使用useEffect更新组件的状态，要谨慎使用第二个参数为空的情形
+* 使用yarn android生成android项目并运行，使用expo start无法启动(报错)
+* 轮播图使用@ant-design/react-native蚂蚁金服RN组件Carousel
+* 自定义组件Banner轮播图、文章Article-Item
+* 复杂组件FlatList，Header头部设置为Banner轮播图、设置refreshing，控制下拉刷新，onEndReachd加载更多
+
 ## 六 使用到的依赖库
 
 ### 6.1 安装依赖
@@ -100,6 +111,7 @@ npm uninstall @react-navigation/bottom-tabs
 * [@react-navigation/bottom-tabs](https://www.npmjs.com/package/@react-navigation/bottom-tabs)
 * [@react-navigation/native](https://www.npmjs.com/package/@react-navigation/native)
 * [react-native-vector-icons](https://www.npmjs.com/package/react-native-vector-icons)
+* [@ant-design/react-native](https://github.com/ant-design/ant-design-mobile-rn)：Ant Design 移动端设计规范
 
 ### 6.4 图标库
 
