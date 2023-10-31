@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     //8-第2行-图片显示
     articleItemMiddlePic: {
         width: 120,
-        height: 180,
+        height: 140,
         marginLeft: 20
     },
     //9-第3行-布局

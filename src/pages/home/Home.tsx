@@ -42,10 +42,13 @@ const Home = () => {
         //全部接口
         useEffect(() => {
             getData()
-        }, [])
+        }, [])  //加[]空数组，是为了产生死循环
 
         //请求-首页数据
         function getData() {
+            setArticles([])
+            setPage(0)
+            setHasMoreData(true)
             setRefreshing(true)
             Promise.all([bannerReq(), articleTopReq(), articleListReq(0)]).then(result => {
                 //console.log("banner", result[0].data)
@@ -77,7 +80,7 @@ const Home = () => {
             }).catch(error => {
                 console.log(error);
             })
-        }, [page])
+        }, [page])  //加[]空数组，是为了产生死循环
 
         return (
             <SafeAreaView style={[commonStyles.safeAreaContainer]}>
