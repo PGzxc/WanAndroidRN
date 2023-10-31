@@ -96,6 +96,11 @@ yarn
 * Tags显示使用`react-native-tag-select`实现
 * ViewPropTypes 将从 React Native 中移除-警告在App.js种添加LogBox
 
+### 5.4 v4.0
+
+* 基于@ant-design/react-native蚂蚁金服RN组件Tab展示Tab页面
+* 自定义TreeChildList组件， 展示每个Tab的显示
+
 ## 六 使用到的依赖库
 
 ### 6.1 安装依赖
