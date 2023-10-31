@@ -4,6 +4,13 @@ import { StyleSheet, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import Constants from 'expo-constants';
 import NaviTabs from "./src/tabs/NaviTabs.tsx";
+import {LogBox} from "react-native";
+
+//ViewPropTypes 将从 React Native 中移除-警告
+LogBox.ignoreLogs([
+  "ViewPropTypes will be removed",
+  "ColorPropType will be removed",
+])
 
 export default function App() {
   const isDarkMode = false;

@@ -90,6 +90,12 @@ yarn
 * 自定义组件Banner轮播图、文章Article-Item
 * 复杂组件FlatList，Header头部设置为Banner轮播图、设置refreshing，控制下拉刷新，onEndReachd加载更多
 
+### 5.3 v3.0
+
+* 使用SectionList分组列表组件无法实现分组内容Tag显示，使用FlatList自定义Item实现
+* Tags显示使用`react-native-tag-select`实现
+* ViewPropTypes 将从 React Native 中移除-警告在App.js种添加LogBox
+
 ## 六 使用到的依赖库
 
 ### 6.1 安装依赖

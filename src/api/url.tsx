@@ -17,13 +17,13 @@ const bannerUrl = host + '/banner/json';  //-轮播图
 const articleTopUrl = host + '/article/top/json'; //-置顶
 const articleListUrl = host + '/article/list/'; // /0/json-文章
 
+// 导航
+const treeUrl = host + '/tree/json';
+const treeListUrl = host + '/article/list'; // /0/json?cid=60
+
 // 项目
 const projectUrl = host + '/project/tree/json';
 const projectListUrl = host + '/project/list'; // /1/json?cid=294
-
-// 体系
-const treeUrl = host + '/tree/json';
-const treeListUrl = host + '/article/list'; // /0/json?cid=60
 
 // 公众号
 const wxarticleUrl = host + '/wxarticle/chapters/json';

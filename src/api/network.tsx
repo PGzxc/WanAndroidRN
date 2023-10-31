@@ -22,13 +22,14 @@ const bannerReq = () => http.GET(bannerUrl);
 const articleTopReq = () => http.GET(articleTopUrl);
 const articleListReq = (page: number) => http.GET(articleListUrl+`${page}/json`);
 
-// project  /1/json?cid=294
-const projectReq = () => http.GET(projectUrl);
-const projectListReq = (page: number, cid: number) => http.GET(projectListUrl + '/' + page + '/json?' + 'cid=' + cid);
 
 // tree  /1/json?cid=294
 const treeReq = () => http.GET(treeUrl);
 const treeListReq = (page: number, cid: number) => http.GET(treeListUrl + '/' + page + '/json?' + 'cid=' + cid);
+
+// project  /1/json?cid=294
+const projectReq = () => http.GET(projectUrl);
+const projectListReq = (page: number, cid: number) => http.GET(projectListUrl + '/' + page + '/json?' + 'cid=' + cid);
 
 // wxarticle
 const wxarticleReq = () => http.GET(wxarticleUrl);
