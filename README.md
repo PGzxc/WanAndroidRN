@@ -1,3 +1,7 @@
+| ![][1] | ![][2] | ![][3] |
+| ------ | ------ | ------ |
+| ![][4] | ![][5] | ![][6] |
+
 ## 一 开发环境
 
 * 操作系统：Windows 11 专业版 22H2
@@ -150,5 +154,11 @@ npm uninstall @react-navigation/bottom-tabs
 
 ### 7.2 .eslintrc.js配置rules规则
 
-## 八 项目预览
 
+
+[1]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/rn-waz-home-1.jpg
+[2]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/rn-waz-nav-2.jpg
+[3]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/rn-waz-project-3.jpg
+[4]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/rn-waz-msg-unread-4.jpg
+[5]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/rn-waz-me-unlogin-5.jpg
+[6]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/rn-waz-me-login-6.jpg
