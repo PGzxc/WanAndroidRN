@@ -31,6 +31,8 @@ npm run web
 npx expo start
 ```
 
+说明：目前只支持手机端，模拟器暂时无法运行
+
 ## 三 如何使用
 
 ### 3.1 下载本项目
@@ -100,6 +102,11 @@ yarn
 
 * 基于@ant-design/react-native蚂蚁金服RN组件Tab展示Tab页面
 * 自定义TreeChildList组件， 展示每个Tab的显示
+
+### 5.5 v5.0
+
+* 我的界面UI绘制
+* 基于@ant-design/react-native蚂蚁金服RN组件Grid显示网络布局
 
 ## 六 使用到的依赖库
 

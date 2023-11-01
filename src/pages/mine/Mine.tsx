@@ -1,8 +1,19 @@
-import {Text, View} from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
 import React from 'react';
+import {withSafeAreaInsets} from "react-native-safe-area-context";
+import {commonStyles} from "../../styles/common";
+import MineHead from "../../components/MineHead";
 
-const Mine = () => <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    <Text>Mine</Text>
-</View>;
+/**
+ * @desc：我的界面
+ * @constructor
+ */
+const Mine = () => {
+    return (
+        <SafeAreaView style={[commonStyles.safeAreaContainer]}>
+            <MineHead/>
+        </SafeAreaView>
+    )
+};
 
-export default Mine;
+export default withSafeAreaInsets(Mine);
