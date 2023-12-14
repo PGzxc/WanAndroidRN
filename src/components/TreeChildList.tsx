@@ -1,22 +1,27 @@
-import {FlatList} from "react-native";
-import Banner from "./Banner";
+import {FlatList, TouchableOpacity} from "react-native";
 import EmptyComponent from "./EmptyComponent";
 import React, {useEffect, useState} from "react";
 import Article from "./Article";
-import {articleListReq, articleTopReq, bannerReq} from "../api/network";
 
 /**
  * @desc：项目——每个Tab对应的列表
  */
 export default function (props) {
-    const { tabId, NetWorkApi, navigation } = props;
+    const {tabId, NetWorkApi, navigation} = props;
     const [articles, setArticles] = useState([]); //置顶+文章
     const [page, setPage] = useState(0); //页码
     const [hasMoreData, setHasMoreData] = useState(true); //下滑有没有更多数据
     const [naviOpacity, setNaviOpacity] = useState(0);
     const [refreshing, setRefreshing] = useState(false)
     const renderItem = ({item}) => {
-        return <Article item={item}/>
+        return (
+            <TouchableOpacity key={item.id} activeOpacity={0.7} onPress={() => {
+                console.log('item>>>', JSON.stringify(item));
+                navigation.push('WebPage', item)
+            }}>
+                <Article item={item}/>
+            </TouchableOpacity>
+        )
     }
 
     //使FlatList滚动
@@ -70,6 +75,5 @@ export default function (props) {
             }}
             renderItem={renderItem}/>
     )
-
 
 }

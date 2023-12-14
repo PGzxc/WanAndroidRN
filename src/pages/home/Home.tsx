@@ -14,8 +14,8 @@ import EmptyComponent from "../../components/EmptyComponent";
  */
 
 
-const Home = () => {
-
+const Home = (props) => {
+        const {navigation} = props;
         const [banner, setBanner] = useState([]) //轮播图
         const [articles, setArticles] = useState([]); //置顶+文章
         const [page, setPage] = useState(0); //页码
@@ -23,7 +23,14 @@ const Home = () => {
         const [naviOpacity, setNaviOpacity] = useState(0);
         const [refreshing, setRefreshing] = useState(false)
         const renderItem = ({item}) => {
-            return <Article item={item}/>
+            return (
+                <TouchableOpacity key={item.id} activeOpacity={0.7} onPress={() => {
+                    console.log('item>>>', JSON.stringify(item));
+                    navigation.push('WebPage', item)
+                }}>
+                    <Article item={item}/>
+                </TouchableOpacity>
+            )
         }
 
         //使FlatList滚动
@@ -85,7 +92,7 @@ const Home = () => {
         return (
             <SafeAreaView style={[commonStyles.safeAreaContainer]}>
                 <FlatList
-                    ListHeaderComponent={Banner(banner)}
+                    ListHeaderComponent={<Banner {...props} {...{banner: banner}} />}
                     data={articles}
                     onScroll={_onScroll}
                     refreshing={refreshing}

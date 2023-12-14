@@ -124,6 +124,12 @@ yarn
 * 配置React Navigation路由导航(Tab+Stack嵌套)
 * 使用ets后缀时，name无法识别为RouteName，暂时使用js后缀
 
+### 5.8 v8.0
+
+* 添加`react-native-webview`网页显示依赖
+* 首页轮播图、首页文章列表、项目点击跳转网页显示
+* useEffect设置标题
+
 ## 六 使用到的依赖库
 
 ### 6.1 安装依赖

@@ -59,44 +59,46 @@ export default function ({item}) {
 
 
     if (item != null) return (
-        <TouchableOpacity key={item.id} activeOpacity={0.7} onPress={() => {
-            console.log('item>>>', JSON.stringify(item));
-        }}>
-            <View style={styles.articleItemContainer}>
-                {/*第1行*/}
-                <View style={[styles.articleItemHeader]}>
-                    {/*第1行-标签*/}
-                    {hasRefreshTag(item) && <Text style={styles.articleItemHeadTag}>{reFreshTag(item)}</Text>}
-                    {hasTag(item) && <Text style={styles.articleItemHeadTag}>{tag(item)}</Text>}
-                    {/*第1行-用户*/}
-                    <View style={styles.articleItemUser}>
-                        <FontAwesome name="user" size={20}/>
-                        <Text style={{marginLeft:5}}>{author(item)}</Text>
-                    </View>
-                    {/*第1行-时间*/}
-                    <View style={styles.articleItemHeaderRight}>
-                        <FontAwesome name="calendar" size={20}/>
-                        <Text style={{marginLeft:5}}>{item.niceDate}</Text>
-                    </View>
+        // <TouchableOpacity key={item.id} activeOpacity={0.7} onPress={() => {
+        //     console.log('item>>>', JSON.stringify(item));
+        // }}>
+        <View style={styles.articleItemContainer}>
+            {/*第1行*/}
+            <View style={[styles.articleItemHeader]}>
+                {/*第1行-标签*/}
+                {hasRefreshTag(item) && <Text style={styles.articleItemHeadTag}>{reFreshTag(item)}</Text>}
+                {hasTag(item) && <Text style={styles.articleItemHeadTag}>{tag(item)}</Text>}
+                {/*第1行-用户*/}
+                <View style={styles.articleItemUser}>
+                    <FontAwesome name="user" size={20}/>
+                    <Text style={{marginLeft: 5}}>{author(item)}</Text>
                 </View>
-                {/*第2行*/}
-                <View style={styles.articleItemMiddle}>
-                    <View style={styles.articleItemMiddleInfo}>
-                        <Text numberOfLines={1} ellipsizeMode={"tail"} style={[styles.articleItemMiddleTitle]}>{title(item)}</Text>
-                        <Text numberOfLines={2} ellipsizeMode={"tail"} style={styles.articleItemMiddleDesc}>{desc(item)}</Text>
-                    </View>
-                    {hasPic(item) && <Image style={styles.articleItemMiddlePic} source={{uri: item.envelopePic}}/>}
+                {/*第1行-时间*/}
+                <View style={styles.articleItemHeaderRight}>
+                    <FontAwesome name="calendar" size={20}/>
+                    <Text style={{marginLeft: 5}}>{item.niceDate}</Text>
                 </View>
-                {/*第3行*/}
-                <View style={styles.articleItemEnd}>
-                    {isTop(item) && <Text style={styles.articleItemEndTag1}>{top(item)}</Text>}
-                    {hasSuperChapterName(item) &&
-                        <Text style={styles.articleItemEndTag2}>{superChapterName(item)}</Text>}
-                    {hasChapterName(item) && <Text style={styles.articleItemEndTag2}>{chapterName(item)}</Text>}
-                </View>
-
             </View>
-        </TouchableOpacity>
+            {/*第2行*/}
+            <View style={styles.articleItemMiddle}>
+                <View style={styles.articleItemMiddleInfo}>
+                    <Text numberOfLines={1} ellipsizeMode={"tail"}
+                          style={[styles.articleItemMiddleTitle]}>{title(item)}</Text>
+                    <Text numberOfLines={2} ellipsizeMode={"tail"}
+                          style={styles.articleItemMiddleDesc}>{desc(item)}</Text>
+                </View>
+                {hasPic(item) && <Image style={styles.articleItemMiddlePic} source={{uri: item.envelopePic}}/>}
+            </View>
+            {/*第3行*/}
+            <View style={styles.articleItemEnd}>
+                {isTop(item) && <Text style={styles.articleItemEndTag1}>{top(item)}</Text>}
+                {hasSuperChapterName(item) &&
+                    <Text style={styles.articleItemEndTag2}>{superChapterName(item)}</Text>}
+                {hasChapterName(item) && <Text style={styles.articleItemEndTag2}>{chapterName(item)}</Text>}
+            </View>
+
+        </View>
+        // </TouchableOpacity>
     )
 }
 
