@@ -8,10 +8,10 @@ import MineHead from "../../components/MineHead";
  * @desc：我的界面
  * @constructor
  */
-const Mine = () => {
+const Mine = (props) => {
     return (
         <SafeAreaView style={[commonStyles.safeAreaContainer]}>
-            <MineHead/>
+            <MineHead  {...props}/>
         </SafeAreaView>
     )
 };

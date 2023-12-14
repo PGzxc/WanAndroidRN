@@ -1,13 +1,13 @@
 /**
  * @desc：我的-头部
  */
-import {ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import React, {useState} from "react";
 import {Grid} from '@ant-design/react-native'
 
 export default function (props) {
-
+    const {navigation} = props;
     const [hasLogin, setHasLogin] = useState(false) //是否登录
     const [level, setLevel] = useState(0) //当前等级
     const [rank, setRank] = useState(0) //当前排名
@@ -45,9 +45,11 @@ export default function (props) {
         console.log(JSON.stringify(item));
         return (
             <View style={{backgroundColor: item.backgroundColor, flex: 1}}>
-                <TouchableOpacity activeOpacity={0.5} style={{justifyContent: 'center', alignItems: "center", display: "flex", flex: 1}} onPress={() => {
-                    console.log(JSON.stringify(item));
-                }}>
+                <TouchableOpacity activeOpacity={0.5}
+                                  style={{justifyContent: 'center', alignItems: "center", display: "flex", flex: 1}}
+                                  onPress={() => {
+                                      console.log(JSON.stringify(item));
+                                  }}>
                     <Text style={{textAlign: "center", color: "black", fontSize: 15}}>{item.name}</Text>
                 </TouchableOpacity>
             </View>
@@ -55,14 +57,18 @@ export default function (props) {
     }
     return (
         <ScrollView>
+
             <View style={styles.mineHead}>
                 {/* 1-用户信息 */}
-                <View style={styles.mineHeadUser}>
-                    <FontAwesome name="user-circle" style={styles.mineHeadUserIcon} size={50}/>
-                    <Text style={styles.mineHeadUserName}>{hasLogin ? userName : "欢迎登陆"}</Text>
-                    <FontAwesome name="angle-right" style={styles.mineHeadUserArrow} size={30}/>
-                </View>
-
+                <TouchableOpacity activeOpacity={0.7} onPress={() => {
+                    navigation.push("Login")
+                }}>
+                    <View style={styles.mineHeadUser}>
+                        <FontAwesome name="user-circle" style={styles.mineHeadUserIcon} size={50}/>
+                        <Text style={styles.mineHeadUserName}>{hasLogin ? userName : "欢迎登陆"}</Text>
+                        <FontAwesome name="angle-right" style={styles.mineHeadUserArrow} size={30}/>
+                    </View>
+                </TouchableOpacity>
                 {/* 2-等级、排名、收藏、积分 */}
                 <View style={styles.mineHeadInfo}>
                     <View style={styles.mineHeadInfoItem}>

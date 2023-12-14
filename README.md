@@ -119,6 +119,11 @@ yarn
 * 消息界面-ui
 * tab切换显示：已读消息和未读消息
 
+### 5.7 v7.0
+
+* 配置React Navigation路由导航(Tab+Stack嵌套)
+* 使用ets后缀时，name无法识别为RouteName，暂时使用js后缀
+
 ## 六 使用到的依赖库
 
 ### 6.1 安装依赖

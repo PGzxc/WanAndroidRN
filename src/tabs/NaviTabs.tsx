@@ -10,7 +10,7 @@ import Mine from '../pages/mine/Mine';
 
 
 const Tab = createBottomTabNavigator();
-const NaviTabs = () =>
+export const NaviTabs = () =>
     <Tab.Navigator screenOptions={{tabBarActiveTintColor: '#e91e63'}}>
         <Tab.Screen name="首页" component={Home}
                     options={{
@@ -55,4 +55,3 @@ const NaviTabs = () =>
     </Tab.Navigator>;
 
 
-export default NaviTabs;
