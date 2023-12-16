@@ -1,5 +1,4 @@
-
-import http, { HttpResult } from './http'
+import http, {HttpResult} from './http'
 import {
     bannerUrl,
     articleTopUrl,
@@ -20,14 +19,14 @@ import {
     wxarticleUrl,
     wxarticleListUrl,
     wxarticleSearchUrl,
-    chapterListUrl, userInfUrl,
+    chapterListUrl, userInfUrl, msgUnreadUrl, msgReadUrl,
 } from './url'
 
 
 // home
 const bannerReq = () => http.GET(bannerUrl);
 const articleTopReq = () => http.GET(articleTopUrl);
-const articleListReq = (page: number) => http.GET(articleListUrl+`${page}/json`);
+const articleListReq = (page: number) => http.GET(articleListUrl + `${page}/json`);
 
 
 // tree  /1/json?cid=294
@@ -38,14 +37,18 @@ const treeListReq = (page: number, cid: number) => http.GET(treeListUrl + '/' + 
 const projectReq = () => http.GET(projectUrl);
 const projectListReq = (page: number, cid: number) => http.GET(projectListUrl + '/' + page + '/json?' + 'cid=' + cid);
 
+//消息
+const msgUnreadReq = () => http.GET(msgUnreadUrl)
+const msgReadReq = (page: number) => http.GET(msgReadUrl + page + '/json')
+
 //Register、Login、Logout
 
-const loginReq = (username:string , password: string) => http.POST(loginUrl+`?username=${username}&password=${password}`)
-const registerReq = (username:string , password: string,repassword:string) => http.POST(loginUrl+`?username=${username}&password=${password}&repassword=${repassword}`)
+const loginReq = (username: string, password: string) => http.POST(loginUrl + `?username=${username}&password=${password}`)
+const registerReq = (username: string, password: string, repassword: string) => http.POST(loginUrl + `?username=${username}&password=${password}&repassword=${repassword}`)
 const logoutReq = () => http.GET(loginUrl);
 
 //我的
-const userInfUrlReq = ()=>http.GET(userInfUrl)
+const userInfUrlReq = () => http.GET(userInfUrl)
 
 // wxarticle
 const wxarticleReq = () => http.GET(wxarticleUrl);
@@ -72,6 +75,9 @@ export {
 
     treeReq,
     treeListReq,
+
+    msgUnreadReq,
+    msgReadReq,
 
     loginReq,
     registerReq,

@@ -136,6 +136,11 @@ yarn
 * `react-native-toast-notifications`土司依赖
 * `option.cache = "force-cache"`强制缓存
 
+### 5.10 v10.0
+
+* 已读、未读消息界面
+* 消息Item跳转WebView显示，添加前缀(传递url)
+
 ## 六 使用到的依赖库
 
 ### 6.1 安装依赖

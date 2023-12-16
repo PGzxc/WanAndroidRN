@@ -26,8 +26,7 @@ const Home = (props) => {
             return (
                 <TouchableOpacity key={item.id} activeOpacity={0.7} onPress={() => {
                     console.log('item>>>', JSON.stringify(item));
-                    navigation.push('WebPage', item)
-                }}>
+                    navigation.push('WebPage', item)}}>
                     <Article item={item}/>
                 </TouchableOpacity>
             )

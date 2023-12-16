@@ -3,12 +3,22 @@ import {Dimensions, FlatList, SafeAreaView, Text, View} from "react-native";
 import {commonStyles} from "../../styles/common";
 import {withSafeAreaInsets} from "react-native-safe-area-context";
 import WebView from "react-native-webview";
+import * as Utils from "../../utils/Utils"
 
-
+/**
+ * @desc：网页详情
+ * @param navigation
+ * @param route
+ * @param insets
+ * @constructor
+ */
 const WebPage = ({navigation, route, insets}) => {
         const {width: kW, height: kH} = Dimensions.get('window');
         const [progress, setProgress] = useState(0);
-        const {link, url, title} = route.params;
+        let {link, url, title} = route.params;
+        if (!Utils.isEmpty(link)) {  //用于处理msg消息中link不完整
+            link = link.startsWith("https") ? link : "https://wanandroid.com" + link
+        }
         const _renderProgressView = (
             progress < 1 && (
                 <View style={{position: 'absolute', zIndex: 1000, width: kW, height: 2, backgroundColor: '#fff'}}>

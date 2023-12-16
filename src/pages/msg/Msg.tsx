@@ -4,12 +4,16 @@ import {withSafeAreaInsets} from "react-native-safe-area-context";
 import {commonStyles} from "../../styles/common";
 import {Tabs} from "@ant-design/react-native";
 import {styles} from "./styles";
+import MsgReadList from "./MsgReadPage";
+import MsgUnReadList from "./MsgUnReadPage";
+import MsgReadPage from "./MsgReadPage";
+import MsgUnReadPage from "./MsgUnReadPage";
 
 /**
  * desc：消息
  * @constructor
  */
-const Msg = () => {
+const Msg = (props) => {
     const tabs = [
         {title: '未读消息'},
         {title: '已读消息'},
@@ -19,10 +23,10 @@ const Msg = () => {
         <SafeAreaView style={[commonStyles.safeAreaContainer]}>
             <Tabs tabs={tabs}>
                 <View style={styles.msgContent}>
-                    <Text>没有未读消息</Text>
+                    <MsgUnReadPage {...props}/>
                 </View>
                 <View style={styles.msgContent}>
-                    <Text>已读消息</Text>
+                    <MsgReadPage {...props}/>
                 </View>
             </Tabs>
         </SafeAreaView>

@@ -25,6 +25,10 @@ const treeListUrl = host + '/article/list'; // /0/json?cid=60
 const projectUrl = host + '/project/tree/json';
 const projectListUrl = host + '/project/list'; // /1/json?cid=294
 
+//消息
+const msgUnreadUrl: string = host + '/message/lg/count_unread/json';
+const msgReadUrl: string = host + '/message/lg/readed_list/'; //message/lg/readed_list/%s/json
+
 // 公众号
 const wxarticleUrl = host + '/wxarticle/chapters/json';
 const wxarticleListUrl = host + '/wxarticle/list'; // /408/1/json
@@ -58,6 +62,9 @@ export {
 
     treeUrl,
     treeListUrl,
+
+    msgUnreadUrl,
+    msgReadUrl,
 
     loginUrl,
     registerUrl,
