@@ -4,16 +4,23 @@ import {
     bannerUrl,
     articleTopUrl,
     articleListUrl,
+
     projectUrl,
     projectListUrl,
+
     treeUrl,
     treeListUrl,
+
+    loginUrl,
+    registerUrl,
+    loginOutUrl,
+
     toolUrl,
     chapterUrl,
     wxarticleUrl,
     wxarticleListUrl,
     wxarticleSearchUrl,
-    chapterListUrl,
+    chapterListUrl, userInfUrl,
 } from './url'
 
 
@@ -30,6 +37,15 @@ const treeListReq = (page: number, cid: number) => http.GET(treeListUrl + '/' + 
 // project  /1/json?cid=294
 const projectReq = () => http.GET(projectUrl);
 const projectListReq = (page: number, cid: number) => http.GET(projectListUrl + '/' + page + '/json?' + 'cid=' + cid);
+
+//Register、Login、Logout
+
+const loginReq = (username:string , password: string) => http.POST(loginUrl+`?username=${username}&password=${password}`)
+const registerReq = (username:string , password: string,repassword:string) => http.POST(loginUrl+`?username=${username}&password=${password}&repassword=${repassword}`)
+const logoutReq = () => http.GET(loginUrl);
+
+//我的
+const userInfUrlReq = ()=>http.GET(userInfUrl)
 
 // wxarticle
 const wxarticleReq = () => http.GET(wxarticleUrl);
@@ -56,6 +72,12 @@ export {
 
     treeReq,
     treeListReq,
+
+    loginReq,
+    registerReq,
+    logoutReq,
+
+    userInfUrlReq,
 
     toolReq,
     chapterReq,

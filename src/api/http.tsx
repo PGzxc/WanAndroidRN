@@ -7,8 +7,8 @@ type HttpMethods = 'POST' | "GET" | "PUT" | "DELETE" | "PATCH"
 // type HttpResultItem = { code: number| null, msg: string, data: any }
 
 export interface HttpResult {
-    code: number | null, 
-    msg: string | null, 
+    code: number | null,
+    msg: string | null,
     data: any
 }
 
@@ -48,9 +48,9 @@ async function handleFetch<P, Q, H>(url: string, method: HttpMethods, params?: P
     // let token = singleton.getToken()
     let option: any = {
         method: method,
-        // headers: {
-        //     accessToken: token
-        // }
+        headers: {
+            //'Cookie': "loginUserName_wanandroid_com=12345678; token_pass_wanandroid_com=08937b953a34ae42f65e461149b23129;", //使用option.cache代替
+        }
     }
     if (query) {
         url = url + "?" + Qs.stringify(query)
@@ -58,11 +58,12 @@ async function handleFetch<P, Q, H>(url: string, method: HttpMethods, params?: P
     console.log('url=>' + url)
     if (method !== 'GET' && params) {
         option.body = params
-        //console.log('body=>'+ JSON.stringify(params))
+        option.cache = "force-cache" //自动携带token
+        console.log('body=>'+ JSON.stringify(params))
     }
     if (header) {
         option.headers = { ...option.headers, ...header }
-        //console.log('headers=>'+ JSON.stringify(option.headers))
+        console.log('headers=>'+ JSON.stringify(option.headers))
     }
     /// reject 用不上???
     return new Promise(async (resolve, reject) => {
@@ -71,7 +72,7 @@ async function handleFetch<P, Q, H>(url: string, method: HttpMethods, params?: P
             let result: any = null
             if (response.ok) {
                 result = await response.json()
-                // console.log(result)
+                console.log(result)
                 // 如果匹配到特定域名开头, 校验errorCode
                 if (url.startsWith(host)) {
                     if (result && result.errorCode === 0) {
@@ -88,13 +89,13 @@ async function handleFetch<P, Q, H>(url: string, method: HttpMethods, params?: P
                     }
                 }
             } else {
-                //console.log('response.status>>>', response.status)
+                console.log('response.status>>>', response.status)
                 resolve({ code: response.status || -1, msg: '网络错误', data: null })
                 //reject({ code: response.status || -1, msg: '网络错误', data: null })
             }
         } catch (error) {
             console.log('error>>>', error)
-            // reject({ code: -1, msg: '网络错误', data: null })
+             reject({ code: -1, msg: '网络错误', data: null })
             resolve({ code: -1, msg: '网络错误', data: null })
         }
     })

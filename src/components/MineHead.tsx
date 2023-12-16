@@ -3,17 +3,25 @@
  */
 import {Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Grid} from '@ant-design/react-native'
+import {userInfUrlReq} from "../api/network";
+import * as Utils from "../utils/Utils"
 
 export default function (props) {
     const {navigation} = props;
-    const [hasLogin, setHasLogin] = useState(false) //是否登录
+    const [hasLogin, setHasLogin] = useState(true) //是否登录
     const [level, setLevel] = useState(0) //当前等级
     const [rank, setRank] = useState(0) //当前排名
     const [coinCount, setCoinCount] = useState(0) //积分
     const [total, setTotal] = useState(0) //收藏
     const [userName, setUserName] = useState("") //用户名
+
+    const [userData, setUserData] = useState({
+        coinInfo: {level: '', rank: '', coinCount: ''},
+        collectArticleInfo: {},
+        userInfo: {username: '', collectIds: []}
+    }) //用户信息
     const gridData = [
         {
             name: "工具",
@@ -40,6 +48,16 @@ export default function (props) {
             backgroundColor: "red"
         },
     ]
+    useEffect(() => {
+        userInfUrlReq().then((result) => {
+            console.log("userInfo===>", JSON.stringify(result.data))
+            setUserData(result.data)
+        }).catch((err) => {
+            setUserData(null)
+            console.log("userInfo=error==>", err)
+        })
+    }, [])
+
     //grid-item-自定义
     const _renderItem = (item) => {
         console.log(JSON.stringify(item));
@@ -61,11 +79,14 @@ export default function (props) {
             <View style={styles.mineHead}>
                 {/* 1-用户信息 */}
                 <TouchableOpacity activeOpacity={0.7} onPress={() => {
-                    navigation.push("Login")
+                    if (Utils.isEmpty(userData)) {
+                        navigation.push("Login")
+                    }
                 }}>
                     <View style={styles.mineHeadUser}>
                         <FontAwesome name="user-circle" style={styles.mineHeadUserIcon} size={50}/>
-                        <Text style={styles.mineHeadUserName}>{hasLogin ? userName : "欢迎登陆"}</Text>
+                        <Text
+                            style={styles.mineHeadUserName}>{Utils.isEmpty(userData) ? "欢迎登陆" : userData.userInfo.username}</Text>
                         <FontAwesome name="angle-right" style={styles.mineHeadUserArrow} size={30}/>
                     </View>
                 </TouchableOpacity>
@@ -73,19 +94,19 @@ export default function (props) {
                 <View style={styles.mineHeadInfo}>
                     <View style={styles.mineHeadInfoItem}>
                         <Text style={styles.mineHeadInfoItemTitle}>等级</Text>
-                        <Text>{hasLogin ? `${level}` : "——"}</Text>
+                        <Text>{!Utils.isEmpty(userData) ? `${userData.coinInfo.level}` : "——"}</Text>
                     </View>
                     <View style={styles.mineHeadInfoItem}>
                         <Text style={styles.mineHeadInfoItemTitle}>排名</Text>
-                        <Text>{hasLogin ? `${rank}` : "——"}</Text>
+                        <Text>{!Utils.isEmpty(userData) ? `${userData.coinInfo.rank}` : "——"}</Text>
                     </View>
                     <View style={styles.mineHeadInfoItem}>
                         <Text style={styles.mineHeadInfoItemTitle}>收藏</Text>
-                        <Text>{hasLogin ? `${total}` : "——"}</Text>
+                        <Text>{!Utils.isEmpty(userData) ? `${userData.userInfo.collectIds.length}` : "——"}</Text>
                     </View>
                     <View style={styles.mineHeadInfoItem}>
                         <Text style={styles.mineHeadInfoItemTitle}>积分</Text>
-                        <Text>{hasLogin ? `${coinCount}` : "——"}</Text>
+                        <Text>{!Utils.isEmpty(userData) ? `${userData.coinInfo.coinCount}` : "——"}</Text>
                     </View>
                 </View>
             </View>

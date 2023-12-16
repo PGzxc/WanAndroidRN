@@ -130,6 +130,12 @@ yarn
 * 首页轮播图、首页文章列表、项目点击跳转网页显示
 * useEffect设置标题
 
+### 5.9 v9.0
+
+* Login登录、注册页面
+* `react-native-toast-notifications`土司依赖
+* `option.cache = "force-cache"`强制缓存
+
 ## 六 使用到的依赖库
 
 ### 6.1 安装依赖

@@ -31,6 +31,14 @@ const wxarticleListUrl = host + '/wxarticle/list'; // /408/1/json
 // 搜索
 const wxarticleSearchUrl = host + 'wxarticle/list'; // /405/1/json?k=Java
 
+//登录、注册
+
+const loginUrl = host + '/user/login' //用户登录
+const registerUrl = host + '/user/register' //用户注册
+const loginOutUrl = host + '/user/logout/json' //退出登录
+
+//我的
+const userInfUrl = host + '/user/lg/userinfo/json';
 
 // 工具
 const toolUrl = host + '/tools/list/json';
@@ -50,6 +58,12 @@ export {
 
     treeUrl,
     treeListUrl,
+
+    loginUrl,
+    registerUrl,
+    loginOutUrl,
+
+    userInfUrl,
 
     toolUrl,
     chapterUrl,

@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Constants from 'expo-constants';
 import {LogBox} from "react-native";
 import {AppNavi} from "./src/routers/router";
+import {ToastProvider} from 'react-native-toast-notifications'
 
 //ViewPropTypes 将从 React Native 中移除-警告
 LogBox.ignoreLogs([
@@ -21,14 +22,16 @@ export default function App() {
         //height: '100%',
     };
     return (
-        <View style={styles.container}>
-            <StatusBar
-                barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-                backgroundColor={backgroundStyle.backgroundColor}/>
-            <NavigationContainer>
-                <AppNavi/>
-            </NavigationContainer>
-        </View>
+        <ToastProvider>
+            <View style={styles.container}>
+                <StatusBar
+                    barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                    backgroundColor={backgroundStyle.backgroundColor}/>
+                <NavigationContainer>
+                    <AppNavi/>
+                </NavigationContainer>
+            </View>
+        </ToastProvider>
     );
 }
 
