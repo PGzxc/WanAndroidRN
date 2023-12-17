@@ -5,9 +5,9 @@ import * as Utils from "../../utils/Utils"
 import MsgItem from "../../components/MsgItem";
 import EmptyComponent from "../../components/EmptyComponent";
 
-export default function (props) {
-
-    const {navigation} = props;
+export function MsgUnReadPage({route}) {
+    //console.error("routes===>",route)
+    const {navigation} = route.params;
     const [messages, setMessage] = useState([]);
     const [hasMoreData, setHasMoreData] = useState(true); //下滑有没有更多数据
     const [naviOpacity, setNaviOpacity] = useState(0);
@@ -63,7 +63,8 @@ export default function (props) {
             onRefresh={() => getData()}
             onEndReachedThreshold={0.5}
             ListEmptyComponent={EmptyComponent()}
-            onEndReached={() => {}}
+            onEndReached={() => {
+            }}
             renderItem={renderItem}/>
     )
 }

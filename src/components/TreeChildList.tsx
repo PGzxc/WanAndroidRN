@@ -6,8 +6,8 @@ import Article from "./Article";
 /**
  * @desc：项目——每个Tab对应的列表
  */
-export default function (props) {
-    const {tabId, NetWorkApi, navigation} = props;
+export function TreeChildList({route}) {
+    const {tabId, NetWorkApi, navigation} = route.params;
     const [articles, setArticles] = useState([]); //置顶+文章
     const [page, setPage] = useState(0); //页码
     const [hasMoreData, setHasMoreData] = useState(true); //下滑有没有更多数据

@@ -5,9 +5,9 @@ import * as Utils from "../../utils/Utils"
 import EmptyComponent from "../../components/EmptyComponent";
 import MsgItem from "../../components/MsgItem";
 
-export default function (props) {
-
-    const {navigation} = props;
+export function MsgReadPage({route}) {
+     //console.error("routes===>",route)
+    const {navigation} = route.params;
     const [messages, setMessage] = useState([]);
     const [page, setPage] = useState(0); //页码
     const [hasMoreData, setHasMoreData] = useState(true); //下滑有没有更多数据

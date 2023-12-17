@@ -142,6 +142,26 @@ yarn
 * 已读、未读消息界面
 * 消息Item跳转WebView显示，添加前缀(传递url)
 
+### 5.11 v11.0(去除蚂蚁Ant Design依赖-expo错误)
+
+1-依赖删除
+
+* @ant-design/react-native
+* @react-native-camera-roll/camera-roll
+* @react-native-community/segmented-control
+* @react-native-community/slider
+* @react-native-picker/picker
+
+2-现有项目解决方案
+
+* 蚂蚁Ant Design-轮播图组件`Carousel `替换为`react-native-swiper-flatlist`
+* 蚂蚁Ant Design-Tabs替换为`@react-navigation/material-top-tabs`（消息/项目-页面）
+* 蚂蚁Ant Design-Tabs-Grid替换为`react-native-draggable-grid`(我的-界面)
+
+3-删除
+
+* android：项目文件夹(作为apk运行到手机上，替换为使用expo扫描显示，如需生成使用`npx expo run:android`)
+
 ## 六 使用到的依赖库
 
 ### 6.1 安装依赖

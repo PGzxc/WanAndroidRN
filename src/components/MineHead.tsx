@@ -1,53 +1,54 @@
 /**
  * @desc：我的-头部
  */
-import {Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Dimensions, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import React, {useEffect, useState} from "react";
-import {Grid} from '@ant-design/react-native'
+import {DraggableGrid} from 'react-native-draggable-grid';
 import {userInfUrlReq} from "../api/network";
 import * as Utils from "../utils/Utils"
 
 export default function (props) {
     const {navigation} = props;
-    const [hasLogin, setHasLogin] = useState(true) //是否登录
-    const [level, setLevel] = useState(0) //当前等级
-    const [rank, setRank] = useState(0) //当前排名
-    const [coinCount, setCoinCount] = useState(0) //积分
-    const [total, setTotal] = useState(0) //收藏
-    const [userName, setUserName] = useState("") //用户名
-
+    const {width: kW, height: kH} = Dimensions.get('window');
     const [userData, setUserData] = useState({
         coinInfo: {level: '', rank: '', coinCount: ''},
         collectArticleInfo: {},
         userInfo: {username: '', collectIds: []}
     }) //用户信息
-    const gridData = [
+    let gridData = [
         {
+            key: 1,
             name: "工具",
             backgroundColor: "blue"
         },
         {
+            key: 2,
             name: "问答",
             backgroundColor: "aqua"
         },
         {
+            key: 3,
             name: "消息",
             backgroundColor: "green"
         },
         {
+            key: 4,
             name: "课程",
             backgroundColor: "plum"
         },
         {
+            key: 5,
             name: "待办清单",
             backgroundColor: "gold"
         },
         {
+            key: 6,
             name: "分享文章",
             backgroundColor: "red"
         },
     ]
+    const [data, setData] = useState([gridData])
     useEffect(() => {
         userInfUrlReq().then((result) => {
             console.log("userInfo===>", JSON.stringify(result.data))
@@ -62,7 +63,7 @@ export default function (props) {
     const _renderItem = (item) => {
         console.log(JSON.stringify(item));
         return (
-            <View style={{backgroundColor: item.backgroundColor, flex: 1}}>
+            <View style={{backgroundColor: item.backgroundColor, flex: 1, width: kW / 3}}>
                 <TouchableOpacity activeOpacity={0.5}
                                   style={{justifyContent: 'center', alignItems: "center", display: "flex", flex: 1}}
                                   onPress={() => {
@@ -118,16 +119,16 @@ export default function (props) {
                         marginBottom: 20,
                         fontWeight: "bold"
                     }}>常用功能</Text>
-                <Grid
-                    data={gridData}
+
+                <DraggableGrid
+                    numColumns={3}
                     renderItem={_renderItem}
-                    columnNum={3}
-                    hasLine={false}
-                    itemStyle={{height: 150}}
+                    data={gridData}
+                    onDragRelease={(data) => {
+                        //setData(data)
+                    }}
                 />
-
             </View>
-
         </ScrollView>
     )
 }
