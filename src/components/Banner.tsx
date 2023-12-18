@@ -23,7 +23,7 @@ export default function (props) {
                     console.log('item>>>', JSON.stringify(item));
                     navigation.push('WebPage', item)
                 }}>
-                    <Image style={{width: kW, height: 230}} source={{uri: item.imagePath ?? ''}}/>
+                    <Image style={{width: kW, height: 1/2*kW}} source={{uri: item.imagePath ?? ''}}/>
                 </TouchableOpacity>
             )}
         />
