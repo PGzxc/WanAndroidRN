@@ -31,14 +31,12 @@ yarn
 ### 2.3 运行
 
 ```
+npx expo start //运行到expo go
 yarn android
 npm run android
 npm run ios
 npm run web
-npx expo start
 ```
-
-说明：目前只支持手机端，模拟器暂时无法运行
 
 ## 三 如何使用
 
