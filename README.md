@@ -8,11 +8,12 @@
 ## 一 开发环境
 
 * 操作系统：Windows 11 专业版 22H2
-* Node：v18.18.2，node源：taobao
-* Yarn：1.22.19
+* Node：v22.14.0，NPM版本：10.9.2
+* Yarn：1.22.22
 * jdk：openjdk 11.0.19 2023-04-18
 * Android SDK Build-Tools：33.0.0
-* react-native：0.72.6
+* react-native：0.76.7
+* Expo SDK: 52
 
 ## 二 项目创建
 
