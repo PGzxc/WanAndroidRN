@@ -1,9 +1,10 @@
-import {FlatList, SafeAreaView, SectionList, Text, TouchableOpacity, View} from 'react-native';
+import {FlatList, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {withSafeAreaInsets} from "react-native-safe-area-context";
 import {commonStyles} from "../../styles/common";
 import {treeReq} from "../../api/network";
-import {TagSelect} from 'react-native-tag-select';
+//import {TagSelect} from 'react-native-tag-select';
+import { Chip } from 'react-native-paper';
 import {styles} from "./styles";
 
 
@@ -70,17 +71,19 @@ const Navi = () => {
         return (
             <View style={styles.contentStyle}>
                 <Text style={styles.navHead}>{item.title}</Text>
-                <TagSelect
-                    data={tags}
-                    onItemPress={()=>{console.log("Tap点击")}}
-                    itemStyle={{borderWidth: 1, borderColor: '#333', backgroundColor: '#FFF'}}
-                    itemLabelStyle={{color: '#333'}}
-                    itemStyleSelected={{backgroundColor: '#333',}}
-                    itemLabelStyleSelected={{color: '#FFF',}}
-                />
+
+                <View style={styles.tagStyle}>
+                    {tags.map((tag, index) => (
+                         <Chip
+                            mode="outlined"
+                            key={index}
+                            onPress={() => console.log(`点击了 ${tag}`)}>
+                        {tag}
+                        </Chip>
+                    ))}
+                </View>
             </View>
         );
-
     }
 
     return (

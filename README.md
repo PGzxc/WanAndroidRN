@@ -160,6 +160,22 @@ yarn
 
 * android：项目文件夹(作为apk运行到手机上，替换为使用expo扫描显示，如需生成使用`npx expo run:android`)
 
+### 5.12.0(expo版本升级)
+
+1-Expo和react-native版本升级
+
+```
+Expo:49.0.15—>52.0.38
+react-native:0.72.6—>0.76.7
+```
+
+2-版本依赖(Tag标签)
+
+```
+剔除依赖：react-native-tag-select
+替换依赖：react-native-paper
+```
+
 ## 六 使用到的依赖库
 
 ### 6.1 安装依赖

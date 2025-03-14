@@ -20,5 +20,14 @@ export const styles = StyleSheet.create({
         fontWeight: "bold",
         backgroundColor: '#999999',
         fontSize: 15
+    },
+    tagStyle: {
+        // 使用 Flexbox 布局
+        flexDirection: 'row',
+        // 允许换行
+        flexWrap: 'wrap',
+        // 子元素之间添加间距
+        gap: 8,
+        padding: 8
     }
 })
