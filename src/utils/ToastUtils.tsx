@@ -8,6 +8,7 @@ import {Toast, useToast} from "react-native-toast-notifications";
 
 function infoToast(info: String) {
 
+    // @ts-ignore
     Toast.show(info, {
         type: "normal",
         placement: "bottom",
@@ -18,6 +19,7 @@ function infoToast(info: String) {
 }
 
 function successToast(info: String) {
+    // @ts-ignore
     Toast.show(info, {
         type: "success",
         placement: "bottom",
@@ -28,6 +30,7 @@ function successToast(info: String) {
 
 
 function failToast(info: String) {
+    // @ts-ignore
     Toast.show(info, {
         type: "danger",
         placement: "bottom",
@@ -37,6 +40,7 @@ function failToast(info: String) {
 }
 
 function offline(info: String) {
+    // @ts-ignore
     Toast.show(info, {
         type: "warning",
         placement: "bottom",
