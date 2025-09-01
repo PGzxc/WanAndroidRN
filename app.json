@@ -21,7 +21,11 @@
     ],
     "ios": {
       "jsEngine": "jsc",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.zxc.WanAndroidRN",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "jsEngine": "hermes",
