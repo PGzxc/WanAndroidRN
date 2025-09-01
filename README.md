@@ -167,22 +167,25 @@ yarn
 
 ### 5.12.0(expo版本升级)
 
-1-Expo和react-native版本升级
+```
+1、Expo和react-native版本升级
+ Expo:49.0.15—>52.0.38
+ react-native:0.72.6—>0.76.7
+
+2-版本依赖(Tag标签)
+ 剔除依赖：react-native-tag-select
+ 替换依赖：react-native-paper
+```
+
+### 5.13 v13.0
 
 ```
 1、Expo端
-Expo:49.0.15—>52.0.38
-react-native:0.72.6—>0.76.7
+Expo:52.0.38—>53.0.22
+react-native:0.76.7—>0.79.6
 
-2、生成android端时
-java: 17
-gradle:gradle-8.13-bin.zip
-```
-
-2-功能新增
-
-```
-1、使用 EAS Build云打包和下载
+2、打包
+使用 EAS Build云打包和下载
 ```
 
 ## 六 使用到的依赖库
