@@ -22,32 +22,30 @@ const Project = ({navigation, route}) => {
     }, []) //加[]空数组，是为了产生死循环
     return (
         <SafeAreaView style={[commonStyles.safeAreaContainer]}>
-            <NavigationContainer independent={true}>
-                {
-                    tabDatas != null && tabDatas.length > 0 && <Tab.Navigator screenOptions={{
-                        tabBarLabelStyle: {fontSize: 12},
-                        tabBarActiveTintColor: 'blue',
-                        tabBarInactiveTintColor: 'gray',
-                        tabBarItemStyle: {width: 100},
-                        tabBarScrollEnabled: true,
-                        lazy: true,
-                        lazyPreloadDistance: 0
-                    }}>
-                        {
-                            tabDatas.map((tabItem, index) => {
-                                return (
-                                    <Tab.Screen key={tabItem.id} name={tabItem.name} component={TreeChildList}
-                                                initialParams={{
-                                                    tabId: tabItem.id,
-                                                    NetWorkApi: projectListReq,
-                                                    navigation: navigation
-                                                }}/>
-                                )
-                            })
-                        }
-                    </Tab.Navigator>
-                }
-            </NavigationContainer>
+            {
+                tabDatas != null && tabDatas.length > 0 && <Tab.Navigator  screenOptions={{
+                    tabBarLabelStyle: {fontSize: 12},
+                    tabBarActiveTintColor: 'blue',
+                    tabBarInactiveTintColor: 'gray',
+                    tabBarItemStyle: {width: 100},
+                    tabBarScrollEnabled: true,
+                    lazy: true,
+                    lazyPreloadDistance: 0
+                }}>
+                    {
+                        tabDatas.map((tabItem, index) => {
+                            return (
+                                <Tab.Screen key={tabItem.id} name={tabItem.name} component={TreeChildList}
+                                            initialParams={{
+                                                tabId: tabItem.id,
+                                                NetWorkApi: projectListReq,
+                                                navigation: navigation
+                                            }}/>
+                            )
+                        })
+                    }
+                </Tab.Navigator>
+            }
         </SafeAreaView>
     );
 }

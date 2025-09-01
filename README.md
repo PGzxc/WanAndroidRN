@@ -5,6 +5,10 @@
 | ![][rn-waz-4] | ![][rn-waz-5] | ![][rn-waz-6] |
 | ![][rn-waz-7] | ![][rn-waz-8] | ![][rn-waz-9] |
 
+2、扫码下载
+
+![][code]
+
 ## 一 开发环境
 
 * 操作系统：Windows 11 专业版 22H2
@@ -166,15 +170,19 @@ yarn
 1-Expo和react-native版本升级
 
 ```
+1、Expo端
 Expo:49.0.15—>52.0.38
 react-native:0.72.6—>0.76.7
+
+2、生成android端时
+java: 17
+gradle:gradle-8.13-bin.zip
 ```
 
-2-版本依赖(Tag标签)
+2-功能新增
 
 ```
-剔除依赖：react-native-tag-select
-替换依赖：react-native-paper
+1、使用 EAS Build云打包和下载
 ```
 
 ## 六 使用到的依赖库
@@ -225,3 +233,5 @@ npm uninstall @react-navigation/bottom-tabs
 [rn-waz-7]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/rn-waz-7-melogin.png
 [rn-waz-8]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/rn-waz-8-login.png
 [rn-waz-9]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/rn-waz-9-register.png
+
+[code]:code.png

@@ -3,7 +3,7 @@ import React from 'react';
 import {withSafeAreaInsets} from "react-native-safe-area-context";
 import {commonStyles} from "../../styles/common";
 import {createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs";
-import {NavigationContainer} from "@react-navigation/native";
+//import {NavigationContainer} from "@react-navigation/native";
 import {MsgReadPage} from "./MsgReadPage";
 import {MsgUnReadPage} from "./MsgUnReadPage";
 
@@ -19,12 +19,10 @@ const Msg = ({navigation, route}) => {
     const Tab = createMaterialTopTabNavigator();
     return (
         <SafeAreaView style={[commonStyles.safeAreaContainer]}>
-            <NavigationContainer independent={true}>
-                <Tab.Navigator screenOptions={{tabBarLabelStyle: {fontSize: 16}}}>
-                    <Tab.Screen name="未读消息" component={MsgUnReadPage} initialParams={{navigation: navigation}}/>
-                    <Tab.Screen name="已读消息" component={MsgReadPage} initialParams={{navigation: navigation}}/>
-                </Tab.Navigator>
-            </NavigationContainer>
+            <Tab.Navigator  screenOptions={{tabBarLabelStyle: {fontSize: 16}}}>
+                <Tab.Screen name="未读消息" component={MsgUnReadPage} initialParams={{navigation: navigation}}/>
+                <Tab.Screen name="已读消息" component={MsgReadPage} initialParams={{navigation: navigation}}/>
+            </Tab.Navigator>
         </SafeAreaView>
     )
 };

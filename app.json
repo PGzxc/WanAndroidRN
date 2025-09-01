@@ -29,10 +29,18 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.WanAndroidRN"
+      "package": "com.zxc.WanAndroidRN"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f8b1941e-19b6-48d2-80e6-31229c78a30a"
+      }
     }
   }
 }
