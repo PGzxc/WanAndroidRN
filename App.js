@@ -1,11 +1,12 @@
 import {StatusBar} from 'expo-status-bar';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+//import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {StyleSheet, View} from 'react-native';
 import {NavigationContainer} from "@react-navigation/native";
 import Constants from 'expo-constants';
 import {LogBox} from "react-native";
 import {AppNavi} from "./src/routers/router";
 import {ToastProvider} from 'react-native-toast-notifications'
+import Colors from "./src/utils/Colors";
 
 //ViewPropTypes 将从 React Native 中移除-警告
 LogBox.ignoreLogs([

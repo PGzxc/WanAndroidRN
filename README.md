@@ -225,6 +225,47 @@ npm uninstall @react-navigation/bottom-tabs
 
 ### 7.2 .eslintrc.js配置rules规则
 
+## 八 应用升级(升级expo或依赖)
+
+### 8.1、v12.0(expo版本升级)—2025.03.14
+
+```
+1、Expo和react-native版本升级
+ Expo:49.0.15—>52.0.38
+ react-native:0.72.6—>0.76.7
+
+2-版本依赖(Tag标签)
+ 剔除依赖：react-native-tag-select
+ 替换依赖：react-native-paper
+```
+
+### 8.2、v13.0—2025.09.01
+
+```
+1、Expo端
+Expo:52.0.38—>53.0.22
+react-native:0.76.7—>0.79.6
+
+2、打包
+使用 EAS Build云打包和下载
+```
+
+### 8.3、v14.0—2025.09.15
+
+```
+1、Expo或依赖
+Expo端：53.0.22：——>54.0.0
+升级依赖：npx expo install --fix
+@react-native-community/masked-view—>@react-native-masked-view/masked-view
+
+2、剔除不再支持库(使用自定义Colors，位置App.js)
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+
+3、删除expo-doctor警告
+-位置：package.json
+```
+
+
 
 
 [rn-waz-1]:https://jsd.onmicrosoft.cn/gh/PGzxc/CDN/blog-resume/rn-waz-1-home.png
