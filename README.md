@@ -263,6 +263,11 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 3、删除expo-doctor警告
 -位置：package.json
+
+
+4、EAS Build云打包(15天有效期)
+npx eas build -p android --profile preview   # 测试 APK
+npx eas build -p android --profile production # 正式 AAB
 ```
 
 
