@@ -268,6 +268,12 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 4、EAS Build云打包(15天有效期)
 npx eas build -p android --profile preview   # 测试 APK
 npx eas build -p android --profile production # 正式 AAB
+
+5、打包apk(支持)
+-x86
+-x86_64
+arm64-v8a
+-armeabi-v7a
 ```
 
 
