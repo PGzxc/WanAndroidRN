@@ -43,6 +43,31 @@ npm run ios
 npm run web
 ```
 
+### 2.4 打包
+
+```
+1、云端(借助eas-cli)
+1-1、指令
+npx eas build -p android --profile preview
+1-2、说明
+-构建包含所有架构，体积增大
+-完成后，从云端下载
+
+
+2、本地离线打包(eas-cli，不支持Windows)
+
+2-1、指令
+npm install -g eas-cli //安装本地构建工具
+eas build --local -p android --profile preview //生成android项目
+
+2-2、说明
+-EAS 本地构建不支持 Windows，只能在 Linux 或 macOS 运行
+-若要在Windos运行，推荐使用 Linux 子系统或用 Docker
+-这样会在本机直接编译出 apk 或 aab，完全不需要上传到 Expo 服务器
+
+3、生成本地android或Ios目录，然后打包
+```
+
 ## 三 如何使用
 
 ### 3.1 下载本项目
